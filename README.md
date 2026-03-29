@@ -162,6 +162,37 @@ The fraud engine runs the following checks:
 
 ---
 
+## Development Workflow
+
+### Keeping your branch up to date with `main`
+
+When new commits are pushed to `main` (e.g. after a pull request is merged), update your local branch with:
+
+```bash
+# 1. Fetch the latest changes from the remote
+git fetch origin
+
+# 2. Merge main into your current branch
+git merge origin/main
+
+# 3. Push the updated branch
+git push origin <your-branch-name>
+```
+
+Or, if you prefer a linear history, rebase instead of merge:
+
+```bash
+git fetch origin
+git rebase origin/main
+git push --force-with-lease
+```
+
+> **Note:** `git push --force-with-lease` (without specifying a branch) pushes the current branch to its configured upstream — the same as `git push --force-with-lease origin <your-branch-name>`. Both forms work identically on Windows PowerShell and macOS/Linux.
+
+> **Tip:** Run `git status` and `git log --oneline origin/main..HEAD` at any time to see how far ahead or behind your branch is relative to `main`.
+
+---
+
 ## Project Structure
 
 ```
