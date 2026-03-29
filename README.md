@@ -184,8 +184,10 @@ Or, if you prefer a linear history, rebase instead of merge:
 ```bash
 git fetch origin
 git rebase origin/main
-git push --force-with-lease origin <your-branch-name>
+git push --force-with-lease
 ```
+
+> **Note:** `git push --force-with-lease` (without specifying a branch) pushes the current branch to its configured upstream — the same as `git push --force-with-lease origin <your-branch-name>`. Both forms work identically on Windows PowerShell and macOS/Linux.
 
 > **Tip:** Run `git status` and `git log --oneline origin/main..HEAD` at any time to see how far ahead or behind your branch is relative to `main`.
 

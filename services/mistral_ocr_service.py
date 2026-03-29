@@ -10,7 +10,6 @@ Optionally place the key in a .env file at the project root.
 """
 
 import base64
-import io
 import json
 import os
 import re
@@ -18,8 +17,7 @@ from pathlib import Path
 from typing import Union
 
 from dotenv import load_dotenv
-from mistralai.client import Mistral
-from mistralai.client.models import ImageURLChunk, DocumentURLChunk
+from mistralai import Mistral, ImageURLChunk, DocumentURLChunk
 
 from utils.rib_parser import parse_rib
 
